@@ -1,0 +1,32 @@
+
+
+<h3>Задачи:</h3>
+<h3><%= @project.title %></h3>
+
+<p>
+<%= form_for([@project, @project.todo.build]) do |f| %>
+
+  <%= "---" if @project.todo.empty? %>
+
+<% @project.todo.each do |todo| %>
+
+ <%= todo.text %></p>
+
+<hr>
+
+<% end %>
+
+  <p>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </p>
+  
+
+  <p><%= f.submit %></p>
+
+<% end %>
+</p>
+
+
+
+
